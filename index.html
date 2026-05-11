@@ -176,16 +176,50 @@
           </p>
         </div>
         <figure class="image">
-          <img src="static/images/fig2-10.png" alt="Training dynamics across four benchmarks" style="width:100%;"/>
-          <figcaption class="has-text-centered" style="margin-top:0.5em;">
-            <b>Figure 2.</b> Training dynamics across all four benchmarks. Per-epoch Shannon entropy H of solution families: UG-TTT (blue) preserves diversity while the baseline (gray) collapses.
+          <div class="columns is-mobile is-multiline is-gapless">
+            <div class="column is-3-tablet is-6-mobile has-text-centered">
+              <img src="static/images/figure_ac1.png" alt="AC1" style="width:100%;"/>
+              <p style="margin-top:0.25em;"><b>(a)</b> AC1</p>
+            </div>
+            <div class="column is-3-tablet is-6-mobile has-text-centered">
+              <img src="static/images/figure_ac2.png" alt="AC2" style="width:100%;"/>
+              <p style="margin-top:0.25em;"><b>(b)</b> AC2</p>
+            </div>
+            <div class="column is-3-tablet is-6-mobile has-text-centered">
+              <img src="static/images/figure_cp26.png" alt="CP26" style="width:100%;"/>
+              <p style="margin-top:0.25em;"><b>(c)</b> CP26</p>
+            </div>
+            <div class="column is-3-tablet is-6-mobile has-text-centered">
+              <img src="static/images/figure_erdos.png" alt="Erdős" style="width:100%;"/>
+              <p style="margin-top:0.25em;"><b>(d)</b> Erdős</p>
+            </div>
+          </div>
+          <figcaption class="has-text-centered" style="margin-top:0.75em;">
+            <b>Figure 2. Training dynamics across all four benchmarks.</b> Per-epoch Shannon entropy <i>H</i> of the family distribution over correct rollouts (orange, left axis) and cumulative <i>R<sub>max</sub></i> (teal, right axis); dashed is baseline, solid is UG-TTT. The baseline contracts <i>H</i> monotonically on every problem while UG-TTT sustains higher <i>H</i> and matches or exceeds the baseline reward ceiling, so diversity preservation does not trade off against <i>R<sub>max</sub></i>.
           </figcaption>
         </figure>
         <br>
         <figure class="image">
-          <img src="static/images/fig3-15.png" alt="Diversity collapse is universal and UG-TTT averts it" style="width:100%;"/>
-          <figcaption class="has-text-centered" style="margin-top:0.5em;">
-            <b>Figure 3.</b> Per-epoch family composition: diversity collapse is universal across baselines, and UG-TTT averts it.
+          <div class="columns is-mobile is-multiline is-gapless">
+            <div class="column is-3-tablet is-6-mobile has-text-centered">
+              <img src="static/images/figure_diversity_ac1.png" alt="AC1 family composition" style="width:100%;"/>
+              <p style="margin-top:0.25em;"><b>(a)</b> AC1</p>
+            </div>
+            <div class="column is-3-tablet is-6-mobile has-text-centered">
+              <img src="static/images/figure_diversity_ac2.png" alt="AC2 family composition" style="width:100%;"/>
+              <p style="margin-top:0.25em;"><b>(b)</b> AC2</p>
+            </div>
+            <div class="column is-3-tablet is-6-mobile has-text-centered">
+              <img src="static/images/figure_diversity_cp26.png" alt="CP26 family composition" style="width:100%;"/>
+              <p style="margin-top:0.25em;"><b>(c)</b> CP26</p>
+            </div>
+            <div class="column is-3-tablet is-6-mobile has-text-centered">
+              <img src="static/images/figure_diversity_erdos.png" alt="Erdős family composition" style="width:100%;"/>
+              <p style="margin-top:0.25em;"><b>(d)</b> Erdős</p>
+            </div>
+          </div>
+          <figcaption class="has-text-centered" style="margin-top:0.75em;">
+            <b>Figure 3. Diversity collapse is universal and UG-TTT averts it.</b> Per-epoch family composition of correct rollouts on each benchmark; within each panel, the top row is the baseline (1 LoRA) and the bottom is UG-TTT (5 LoRA + MI + NNM), with <i>H<sub>start</sub> &rarr; H<sub>end</sub></i> reported above. Family vocabularies are problem-specific and identical across conditions, so the contrast lies in which families remain populated. Terminal <i>H</i> = 1.71 / 1.12 / 1.23 / 1.62 bits under UG-TTT versus 0.70 / 0.50 / 0.70 / 0.67 under the baseline.
           </figcaption>
         </figure>
       </div>
