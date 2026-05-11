@@ -80,9 +80,6 @@
               <span class="author-block"><sup>*</sup>Equal contribution (core contributors).</span>
             </div>
 
-            <div class="is-size-5 publication-authors" style="margin-top:0.5em;">
-              <span class="author-block">NeurIPS 2026 (under submission)</span>
-            </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
@@ -102,13 +99,6 @@
               </a>
             </span>
 
-            <!-- TODO: replace with arXiv link once available -->
-            <span class="link-block">
-              <a href="#" class="external-link button is-normal is-rounded is-dark is-disabled" onclick="return false;">
-              <span class="icon"><i class="ai ai-arxiv"></i></span>
-              <span>arXiv (coming soon)</span>
-            </a>
-          </span>
         </div>
       </div>
     </div>
@@ -121,9 +111,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/fig1-02.png" alt="UG-TTT preserves the diversity that drives discovery" style="width:100%;"/>
-      <h2 class="subtitle has-text-centered">
-        <b>UG-TTT preserves the diversity that drives discovery.</b> A LoRA ensemble over a frozen base model produces per-token disagreement, which we use as an exploration bonus directing the policy toward the frontier where genuine discovery is possible.
+      <img src="static/images/figure_pageone.png" alt="UG-TTT preserves the diversity that drives discovery" style="width:100%;"/>
+      <h2 class="subtitle has-text-centered" style="margin-top:1em;">
+        <b>UG-TTT preserves the diversity that drives discovery.</b> The training objective (top) augments the baseline clipped importance-sampling surrogate with a mutual-information (MI) shaped advantage and a nuclear-norm regulariser (purple terms). <i>Left:</i> per-epoch Shannon entropy <i>H</i> of the algorithmic family distribution, averaged over the four benchmarks (thin lines show individual tasks); UG-TTT (purple) sustains a cross-task mean <i>H</i> &asymp; 1.42 bits while the baseline (gray) collapses to 0.65 bits by epoch 5, a 2.20&times; gap. <i>Right:</i> final-epoch entropy gains of +1.01 (AC1), +0.62 (AC2), +0.53 (CP26), and +0.94 (Erdős) bits, which directly enable the <i>R<sub>max</sub></i> improvements reported in the experiments.
       </h2>
     </div>
   </div>
