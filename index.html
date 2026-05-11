@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="title" content="Epistemic Uncertainty for Test-Time Discovery (UG-TTT)">
+  <meta name="description" content="UG-TTT uses LoRA ensemble disagreement as an exploration bonus to preserve solution diversity in test-time RL for scientific discovery.">
+  <meta name="keywords" content="test-time training, epistemic uncertainty, LoRA ensembles, reinforcement learning, scientific discovery, mutual information, exploration, NeurIPS 2026">
+  <meta name="author" content="Kainat Riaz">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Epistemic Uncertainty for Test-Time Discovery">
+  <meta property="og:description" content="LoRA ensemble disagreement as an exploration bonus to preserve diversity in test-time RL for scientific discovery.">
+  <meta property="og:url" content="https://kainatriaz98.github.io/uncertainty-guided-ttt/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Epistemic Uncertainty for Test-Time Discovery">
+  <meta name="twitter:description" content="LoRA ensemble disagreement as an exploration bonus to preserve diversity in test-time RL for scientific discovery.">
+
+  <meta name="citation_title" content="Epistemic Uncertainty for Test-Time Discovery">
+  <meta name="citation_author" content="Riaz, Kainat">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="NeurIPS 2026 (under submission)">
+  <meta name="citation_pdf_url" content="https://kainatriaz98.github.io/uncertainty-guided-ttt/static/pdfs/paper.pdf">
+
+  <meta name="theme-color" content="#2563eb">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>Epistemic Uncertainty for Test-Time Discovery</title>
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+</head>
+<body>
+
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Epistemic Uncertainty for Test-Time Discovery</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://github.com/KainatRiaz98" target="_blank">Kainat Riaz</a>
+              </span>
+              <!-- TODO: add co-authors here -->
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Affiliation TODO &middot; NeurIPS 2026 (under submission)</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="static/pdfs/paper.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/KainatRiaz98/epistemic-uncertainty-for-test-time-discovery" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span>
+
+            <!-- TODO: replace with arXiv link once available -->
+            <span class="link-block">
+              <a href="#" class="external-link button is-normal is-rounded is-dark is-disabled" onclick="return false;">
+              <span class="icon"><i class="ai ai-arxiv"></i></span>
+              <span>arXiv (coming soon)</span>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/fig1-02.png" alt="UG-TTT preserves the diversity that drives discovery" style="width:100%;"/>
+      <h2 class="subtitle has-text-centered">
+        <b>UG-TTT preserves the diversity that drives discovery.</b> A LoRA ensemble over a frozen base model produces per-token disagreement, which we use as an exploration bonus directing the policy toward the frontier where genuine discovery is possible.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Automated scientific discovery using large language models relies on identifying genuinely novel solutions. Standard reinforcement learning penalises high-variance mutations, which leads the policy to prioritise familiar patterns. As a result, the maximum reward plateaus even as the average reward increases. Overcoming this limitation requires a signal that distinguishes unexplored regions from intrinsically difficult problems, which necessitates measuring disagreement across independently adapted weight hypotheses rather than relying on a single network's confidence.
+          </p>
+          <p>
+            <b>UG-TTT</b> addresses this challenge by maintaining a small ensemble of low-rank adapters over a frozen base model. The per-token disagreement, quantified as the mutual information between ensemble predictions and weight hypotheses, isolates epistemic uncertainty and identifies positions where insufficient coverage leads to adapter divergence rather than intrinsic problem difficulty. This measure is incorporated as an exploration bonus into the policy gradient, directing the policy toward positions where persistent adapter disagreement signals low training coverage, the same frontier where genuine discovery is possible. A nuclear norm regularizer ensures the adapters remain distinct from one another, thereby preserving the exploration signal throughout training.
+          </p>
+          <p>
+            Across four scientific discovery benchmarks, UG-TTT increases the maximum reward on three tasks, maintains substantially higher solution diversity, and an ablation study confirms that the regularizer is essential for sustaining exploration.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            UG-TTT augments test-time RL with three ingredients:
+          </p>
+          <ul>
+            <li><b>LoRA ensemble.</b> A small set of low-rank adapters over a single frozen base model produces multiple weight hypotheses at near-zero memory overhead.</li>
+            <li><b>Mutual-information exploration bonus.</b> Per-token disagreement between adapters, measured as the mutual information between ensemble predictions and weight hypotheses, isolates epistemic from aleatoric uncertainty and is added to the policy-gradient reward.</li>
+            <li><b>Nuclear norm regularizer.</b> An explicit diversity term on the stacked LoRA weights prevents the adapters from collapsing into the same hypothesis, keeping the exploration signal alive across training.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            UG-TTT improves the maximum reward on three of four scientific discovery benchmarks and maintains substantially higher solution diversity throughout training. Below, per-epoch Shannon entropy over solution families shows that the baseline collapses to a single family while UG-TTT preserves a multi-modal mixture.
+          </p>
+        </div>
+        <figure class="image">
+          <img src="static/images/fig2-10.png" alt="Training dynamics across four benchmarks" style="width:100%;"/>
+          <figcaption class="has-text-centered" style="margin-top:0.5em;">
+            <b>Figure 2.</b> Training dynamics across all four benchmarks. Per-epoch Shannon entropy H of solution families: UG-TTT (blue) preserves diversity while the baseline (gray) collapses.
+          </figcaption>
+        </figure>
+        <br>
+        <figure class="image">
+          <img src="static/images/fig3-15.png" alt="Diversity collapse is universal and UG-TTT averts it" style="width:100%;"/>
+          <figcaption class="has-text-centered" style="margin-top:0.5em;">
+            <b>Figure 3.</b> Per-epoch family composition: diversity collapse is universal across baselines, and UG-TTT averts it.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{riaz2026ugttt,
+  title     = {Epistemic Uncertainty for Test-Time Discovery},
+  author    = {Riaz, Kainat},
+  booktitle = {Submitted to the 40th Conference on Neural Information Processing Systems (NeurIPS 2026)},
+  year      = {2026},
+  url       = {https://kainatriaz98.github.io/uncertainty-guided-ttt/}
+}</code></pre>
+    </div>
+</section>
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>, adapted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page. Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</main>
+</body>
+</html>
